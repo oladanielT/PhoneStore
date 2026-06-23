@@ -35,11 +35,11 @@ export default function SettingsPage() {
           <CardContent className="space-y-4">
             <div className="grid gap-2">
               <Label htmlFor="store-name">Store Name</Label>
-              <Input id="store-name" defaultValue="Brightway Phones Store Ife" />
+              <Input id="store-name" defaultValue="Dell Survive Store Ife" />
             </div>
             <div className="grid gap-2">
               <Label htmlFor="store-email">Support Email</Label>
-              <Input id="store-email" defaultValue="support@brightwayphones.com" />
+              <Input id="store-email" defaultValue="support@dellsurvive.ng" />
             </div>
             <div className="grid gap-2">
               <Label htmlFor="store-phone">WhatsApp Number</Label>

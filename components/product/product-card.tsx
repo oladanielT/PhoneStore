@@ -79,7 +79,7 @@ export function ProductCard({ product }: { product: Product }) {
             openCart
           />
           <WhatsAppButton
-            message={`Hello Brightway, I am interested in the ${product.name} (${formatNaira(product.price)}). Is it available?`}
+            message={`Hello Dell Survive, I am interested in the ${product.name} (${formatNaira(product.price)}). Is it available?`}
             className="h-10 w-full rounded-xl text-[10px] font-bold uppercase tracking-wider bg-secondary text-secondary-foreground hover:bg-secondary/80"
           >
             Inquire on WhatsApp

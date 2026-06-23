@@ -1,34 +1,44 @@
-'use client'
+"use client";
 
-import { useState, useEffect, useCallback } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { MapPin, ShieldCheck, Truck, ArrowRight, Zap, ChevronLeft, ChevronRight } from 'lucide-react'
-import { Button, buttonVariants } from '@/components/ui/button'
-import { WhatsAppButton } from '@/components/whatsapp-button'
-import { cn } from '@/lib/utils'
+import { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import {
+  MapPin,
+  ShieldCheck,
+  Truck,
+  ArrowRight,
+  Zap,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { WhatsAppButton } from "@/components/whatsapp-button";
+import { cn } from "@/lib/utils";
 
 const carouselImages = [
-  { src: '/hero-phones.png', alt: 'Premium smartphones at Brightway' },
-  { src: '/students.png', alt: 'OAU Student tech deals' },
-  { src: '/repair-bench.png', alt: 'Professional repair services' },
-]
+  { src: "/hero-phones.png", alt: "Premium smartphones at Dell Survive" },
+  { src: "/students.png", alt: "OAU Student tech deals" },
+  { src: "/repair-bench.png", alt: "Professional repair services" },
+];
 
 export function Hero() {
-  const [current, setCurrent] = useState(0)
+  const [current, setCurrent] = useState(0);
 
   const next = useCallback(() => {
-    setCurrent((prev) => (prev + 1) % carouselImages.length)
-  }, [])
+    setCurrent((prev) => (prev + 1) % carouselImages.length);
+  }, []);
 
   const prev = useCallback(() => {
-    setCurrent((prev) => (prev - 1 + carouselImages.length) % carouselImages.length)
-  }, [])
+    setCurrent(
+      (prev) => (prev - 1 + carouselImages.length) % carouselImages.length,
+    );
+  }, []);
 
   useEffect(() => {
-    const timer = setInterval(next, 5000)
-    return () => clearInterval(timer)
-  }, [next])
+    const timer = setInterval(next, 5000);
+    return () => clearInterval(timer);
+  }, [next]);
 
   return (
     <section className="relative overflow-hidden bg-background border-b">
@@ -46,23 +56,30 @@ export function Hero() {
           </div>
 
           <h1 className="font-heading text-5xl font-extrabold leading-[1.1] tracking-tight text-balance sm:text-6xl md:text-7xl">
-            Upgrade Your Tech with <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Brightway</span>
+            Upgrade Your Tech with{" "}
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              Dell Survive
+            </span>
           </h1>
 
           <p className="max-w-md text-lg leading-relaxed text-muted-foreground/90">
-            The most trusted source for iPhones, Samsung, laptops, and more in Ile-Ife. 
-            Experience premium tech with authentic warranty and lightning-fast delivery.
+            The most trusted source for iPhones, Samsung, laptops, and more in
+            Ile-Ife. Experience premium tech with authentic warranty and
+            lightning-fast delivery.
           </p>
 
           <div className="flex flex-col gap-3 sm:flex-row">
             <Link
               href="/shop"
-              className={cn(buttonVariants({ size: 'lg' }), 'h-14 px-8 text-base font-bold shadow-lg shadow-primary/20 transition-all hover:scale-105 active:scale-95')}
+              className={cn(
+                buttonVariants({ size: "lg" }),
+                "h-14 px-8 text-base font-bold shadow-lg shadow-primary/20 transition-all hover:scale-105 active:scale-95",
+              )}
             >
               Shop Collection <ArrowRight className="ml-2 size-5" />
             </Link>
             <WhatsAppButton
-              message="Hello Brightway, I'd like to make an enquiry about a phone."
+              message="Hello Dell Survive, I'd like to make an enquiry about a phone."
               className="h-14 px-8 text-base font-bold transition-all hover:scale-105 active:scale-95"
             >
               Chat to Buy
@@ -71,11 +88,14 @@ export function Hero() {
 
           <div className="grid grid-cols-1 gap-4 pt-4 sm:grid-cols-3">
             {[
-              { icon: ShieldCheck, text: 'Genuine Warranty' },
-              { icon: Truck, text: 'Swift Ife Delivery' },
-              { icon: MapPin, text: 'Store Pickup' },
+              { icon: ShieldCheck, text: "Genuine Warranty" },
+              { icon: Truck, text: "Swift Ife Delivery" },
+              { icon: MapPin, text: "Store Pickup" },
             ].map((item, i) => (
-              <div key={i} className="flex items-center gap-2 text-sm font-medium text-foreground/80">
+              <div
+                key={i}
+                className="flex items-center gap-2 text-sm font-medium text-foreground/80"
+              >
                 <div className="flex size-8 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <item.icon className="size-4" />
                 </div>
@@ -92,7 +112,7 @@ export function Hero() {
                 key={index}
                 className={cn(
                   "absolute inset-0 transition-opacity duration-1000 ease-in-out",
-                  index === current ? "opacity-100" : "opacity-0"
+                  index === current ? "opacity-100" : "opacity-0",
                 )}
               >
                 <Image
@@ -105,37 +125,43 @@ export function Hero() {
                 />
               </div>
             ))}
-            
+
             {/* Carousel Navigation */}
             <div className="absolute inset-x-4 bottom-6 flex items-center justify-between z-20">
-                <Button 
-                    variant="ghost" 
-                    size="icon" 
-                    onClick={(e) => { e.preventDefault(); prev(); }}
-                    className="size-10 rounded-full bg-black/20 text-white backdrop-blur-sm hover:bg-black/40"
-                >
-                    <ChevronLeft className="size-6" />
-                </Button>
-                <div className="flex gap-1.5">
-                    {carouselImages.map((_, i) => (
-                        <button
-                            key={i}
-                            onClick={() => setCurrent(i)}
-                            className={cn(
-                                "h-1.5 rounded-full transition-all duration-300",
-                                i === current ? "w-6 bg-white" : "w-1.5 bg-white/50"
-                            )}
-                        />
-                    ))}
-                </div>
-                <Button 
-                    variant="ghost" 
-                    size="icon" 
-                    onClick={(e) => { e.preventDefault(); next(); }}
-                    className="size-10 rounded-full bg-black/20 text-white backdrop-blur-sm hover:bg-black/40"
-                >
-                    <ChevronRight className="size-6" />
-                </Button>
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={(e) => {
+                  e.preventDefault();
+                  prev();
+                }}
+                className="size-10 rounded-full bg-black/20 text-white backdrop-blur-sm hover:bg-black/40"
+              >
+                <ChevronLeft className="size-6" />
+              </Button>
+              <div className="flex gap-1.5">
+                {carouselImages.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setCurrent(i)}
+                    className={cn(
+                      "h-1.5 rounded-full transition-all duration-300",
+                      i === current ? "w-6 bg-white" : "w-1.5 bg-white/50",
+                    )}
+                  />
+                ))}
+              </div>
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={(e) => {
+                  e.preventDefault();
+                  next();
+                }}
+                className="size-10 rounded-full bg-black/20 text-white backdrop-blur-sm hover:bg-black/40"
+              >
+                <ChevronRight className="size-6" />
+              </Button>
             </div>
 
             {/* Overlay Glass Card */}
@@ -145,23 +171,35 @@ export function Hero() {
                   %
                 </div>
                 <div>
-                  <p className="text-[10px] font-semibold text-white uppercase tracking-wider">Special Offer</p>
-                  <p className="text-lg font-extrabold text-white leading-none">Up to 15% OFF</p>
+                  <p className="text-[10px] font-semibold text-white uppercase tracking-wider">
+                    Special Offer
+                  </p>
+                  <p className="text-lg font-extrabold text-white leading-none">
+                    Up to 15% OFF
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-          
+
           {/* Floating Element */}
           <div className="absolute -top-6 -left-6 hidden animate-bounce-slow rounded-2xl border bg-background p-4 shadow-xl sm:block z-20">
             <div className="flex flex-col gap-1">
-              <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Hot Deals</p>
-              <p className="font-heading text-lg font-black text-primary leading-tight">iPhone 16<br />Pro Max</p>
-              <p className="text-xs font-medium text-muted-foreground">Limited Stock</p>
+              <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">
+                Hot Deals
+              </p>
+              <p className="font-heading text-lg font-black text-primary leading-tight">
+                iPhone 16
+                <br />
+                Pro Max
+              </p>
+              <p className="text-xs font-medium text-muted-foreground">
+                Limited Stock
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

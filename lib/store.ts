@@ -1,12 +1,12 @@
 export const store = {
-  name: 'Brightway Phones Store Ife',
-  shortName: 'Brightway Phones',
+  name: 'Dell Survive Store Ife',
+  shortName: 'Dell Survive',
   tagline: 'Phones, Gadgets & Repairs in Ile-Ife',
   address: 'Shop 5, Itasin Road, 220101, Ife, Osun State',
   phoneDisplay: '+234 806 807 7660',
   // E.164 without the plus, used for wa.me links
   whatsappNumber: '2348068077660',
-  email: 'hello@brightwayphones.ng',
+  email: 'hello@dellsurvive.ng',
   hours: [
     { day: 'Monday – Friday', time: '8:00 AM – 7:30 PM' },
     { day: 'Saturday', time: '9:00 AM – 8:00 PM' },

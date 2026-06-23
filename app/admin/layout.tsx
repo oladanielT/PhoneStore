@@ -35,8 +35,8 @@ export default function AdminLayout({
           <Link href="/" className="flex items-center gap-2">
             <div className="relative size-8 overflow-hidden rounded bg-white">
               <Image
-                src="/placeholder-logo.png"
-                alt="Brightway Logo"
+                src="/placeholder-logo.svg"
+                alt="Dell Survive Logo"
                 fill
                 className="object-contain p-0.5"
               />

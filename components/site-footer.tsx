@@ -13,14 +13,14 @@ export function SiteFooter() {
           <Link href="/" className="flex items-center gap-2">
             <div className="relative size-10 overflow-hidden rounded-lg bg-white">
               <Image
-                src="/placeholder-logo.png"
-                alt="Brightway Phones Logo"
+                src="/placeholder-logo.svg"
+                alt="Dell Survive Logo"
                 fill
                 className="object-contain p-1"
               />
             </div>
             <span className="font-heading text-base font-extrabold">
-              Brightway Phones
+              Dell Survive
             </span>
           </Link>
           <p className="text-sm leading-relaxed text-muted-foreground">
@@ -28,7 +28,7 @@ export function SiteFooter() {
             products, fair prices and warranty you can rely on.
           </p>
           <WhatsAppButton
-            message="Hello Brightway, I'd like to make an enquiry."
+            message="Hello Dell Survive, I'd like to make an enquiry."
             className="mt-1 w-full sm:w-auto"
           >
             Chat on WhatsApp
@@ -114,7 +114,7 @@ export function SiteFooter() {
       <div className="border-t">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-4 py-5 text-xs text-muted-foreground sm:flex-row">
           <p>
-            © {new Date().getFullYear()} Brightway Phones Store Ife. All rights
+            © {new Date().getFullYear()} Dell Survive Store Ife. All rights
             reserved.
           </p>
           <p>

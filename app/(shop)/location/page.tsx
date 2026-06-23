@@ -27,7 +27,7 @@ export default function LocationPage() {
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">
-              From OAU Gate, take a bike or taxi heading towards Mayfair/Itasin. We're on the main road at Itasin, easy to spot with our Brightway signage.
+              From OAU Gate, take a bike or taxi heading towards Mayfair/Itasin. We're on the main road at Itasin, easy to spot with our Dell Survive signage.
             </p>
             <Button asChild className="mt-6 w-full font-bold">
               <a href={store.mapDirectionsUrl} target="_blank">Open in Google Maps</a>

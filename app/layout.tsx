@@ -1,51 +1,51 @@
-import { Analytics } from '@vercel/analytics/next'
-import type { Metadata, Viewport } from 'next'
-import { Geist, Geist_Mono, Plus_Jakarta_Sans } from 'next/font/google'
-import './globals.css'
-import { CartProvider } from '@/components/cart/cart-provider'
-import { Toaster } from '@/components/ui/sonner'
-import { ThemeProvider } from '@/components/theme-provider'
+import { Analytics } from "@vercel/analytics/next";
+import type { Metadata, Viewport } from "next";
+import { Geist, Geist_Mono, Plus_Jakarta_Sans } from "next/font/google";
+import "./globals.css";
+import { CartProvider } from "@/components/cart/cart-provider";
+import { Toaster } from "@/components/ui/sonner";
+import { ThemeProvider } from "@/components/theme-provider";
 
-const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
+const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-})
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 const displayFont = Plus_Jakarta_Sans({
-  variable: '--font-display',
-  subsets: ['latin'],
-  weight: ['600', '700', '800'],
-})
+  variable: "--font-display",
+  subsets: ["latin"],
+  weight: ["600", "700", "800"],
+});
 
 export const metadata: Metadata = {
-  title: 'Brightway Phones Store Ife | Phones, Gadgets & Repairs in Ile-Ife',
+  title: "Dell Survive Phones Store Ife | Phones, Gadgets & Repairs in Ile-Ife",
   description:
-    'Brightway Phones Store Ife — buy iPhones, Samsung, Tecno, Infinix, Redmi, laptops, smartwatches and accessories in Ile-Ife. Student deals near OAU, phone repairs, warranty, fast delivery, and WhatsApp ordering.',
+    "Dell Survive Phones Store Ife — buy iPhones, Samsung, Tecno, Infinix, Redmi, laptops, smartwatches and accessories in Ile-Ife. Student deals near OAU, phone repairs, warranty, fast delivery, and WhatsApp ordering.",
   keywords: [
-    'phone store in Ile-Ife',
-    'iPhone store Ile-Ife',
-    'phone accessories OAU',
-    'gadget shop near OAU',
-    'phone repair Ile-Ife',
-    'Brightway Phones',
+    "phone store in Ile-Ife",
+    "iPhone store Ile-Ife",
+    "phone accessories OAU",
+    "gadget shop near OAU",
+    "phone repair Ile-Ife",
+    "Dell Survive Phones",
   ],
   icons: {
-    icon: '/placeholder-logo.png',
-    apple: '/placeholder-logo.png',
+    icon: "/placeholder-logo.svg",
+    apple: "/placeholder-logo.svg",
   },
-}
+};
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#1f5fe0' },
-    { media: '(prefers-color-scheme: dark)', color: '#000000' },
+    { media: "(prefers-color-scheme: light)", color: "#1f5fe0" },
+    { media: "(prefers-color-scheme: dark)", color: "#000000" },
   ],
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html
@@ -62,9 +62,9 @@ export default function RootLayout({
         >
           <CartProvider>{children}</CartProvider>
           <Toaster richColors position="top-center" />
-          {process.env.NODE_ENV === 'production' && <Analytics />}
+          {process.env.NODE_ENV === "production" && <Analytics />}
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }

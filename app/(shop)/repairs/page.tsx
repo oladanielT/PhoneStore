@@ -54,7 +54,7 @@ export default function RepairsPage() {
 
       <div className="mt-20 grid gap-12 lg:grid-cols-2 lg:items-center">
         <div className="space-y-6">
-          <h2 className="font-heading text-3xl font-extrabold lg:text-4xl">Why repair with <span className="text-primary">Brightway</span>?</h2>
+          <h2 className="font-heading text-3xl font-extrabold lg:text-4xl">Why repair with <span className="text-primary">Dell Survive</span>?</h2>
           
           <div className="space-y-4">
             {[
@@ -76,7 +76,7 @@ export default function RepairsPage() {
 
           <div className="pt-4">
             <WhatsAppButton 
-              message="Hello Brightway, I'd like to ask about a repair for my device."
+              message="Hello Dell Survive, I'd like to ask about a repair for my device."
               className="h-14 px-10 text-lg font-bold"
             >
               Get a Repair Quote
@@ -87,7 +87,7 @@ export default function RepairsPage() {
         <div className="relative aspect-video overflow-hidden rounded-3xl bg-muted shadow-2xl">
           <img 
             src="/repair-bench.png" 
-            alt="Expert repair service at Brightway Phones" 
+            alt="Expert repair service at Dell Survive" 
             className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />

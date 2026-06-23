@@ -1,5 +1,5 @@
-import { MapPin, Clock, Phone } from "lucide-react"
-import { store } from "@/lib/store"
+import { MapPin, Clock, Phone } from "lucide-react";
+import { store } from "@/lib/store";
 
 export function LocationSection() {
   return (
@@ -7,13 +7,15 @@ export function LocationSection() {
       <div className="container mx-auto px-4 py-12 md:py-16">
         <div className="grid gap-8 lg:grid-cols-2 lg:items-stretch">
           <div className="flex flex-col justify-center">
-            <span className="text-sm font-semibold uppercase tracking-wide text-primary">Visit Us</span>
+            <span className="text-sm font-semibold uppercase tracking-wide text-primary">
+              Visit Us
+            </span>
             <h2 className="mt-2 font-heading text-3xl font-bold leading-tight text-balance md:text-4xl">
-              Find Brightway Phones in Ile-Ife
+              Find Dell Survive Phones in Ile-Ife
             </h2>
             <p className="mt-3 leading-relaxed text-muted-foreground">
-              Come see the gadgets in person, get expert advice and same-day repairs. We&apos;re close to OAU campus and
-              easy to reach.
+              Come see the gadgets in person, get expert advice and same-day
+              repairs. We&apos;re close to OAU campus and easy to reach.
             </p>
             <ul className="mt-6 space-y-4">
               <li className="flex gap-3">
@@ -25,7 +27,10 @@ export function LocationSection() {
                 <span className="text-sm leading-relaxed">
                   {store.hours.map((h) => (
                     <span key={h.day} className="block">
-                      <span className="font-medium text-foreground">{h.day}:</span> {h.time}
+                      <span className="font-medium text-foreground">
+                        {h.day}:
+                      </span>{" "}
+                      {h.time}
                     </span>
                   ))}
                 </span>
@@ -53,5 +58,5 @@ export function LocationSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

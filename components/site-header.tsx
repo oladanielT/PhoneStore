@@ -42,15 +42,15 @@ export function SiteHeader() {
         <Link href="/" className="flex items-center gap-2">
           <div className="relative size-10 overflow-hidden rounded-lg bg-white">
             <Image
-              src="/placeholder-logo.png"
-              alt="Brightway Phones Logo"
+              src="/placeholder-logo.svg"
+              alt="Dell Survive Logo"
               fill
               className="object-contain p-1"
             />
           </div>
           <span className="flex flex-col leading-none">
             <span className="font-heading text-base font-extrabold tracking-tight">
-              Brightway
+              Dell Survive
             </span>
             <span className="text-[0.65rem] font-medium uppercase tracking-wider text-muted-foreground">
               Phones · Ife
