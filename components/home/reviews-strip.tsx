@@ -1,17 +1,28 @@
-import Link from "next/link"
-import { reviews, averageRating } from "@/lib/reviews"
-import { RatingStars } from "@/components/rating-stars"
-import { SectionHeading } from "@/components/section-heading"
-import { Button } from "@/components/ui/button"
+'use client'
+
+import Link from 'next/link'
+import { averageRatingFor } from '@/lib/clients'
+import { RatingStars } from '@/components/rating-stars'
+import { SectionHeading } from '@/components/section-heading'
+import { Button } from '@/components/ui/button'
+import { useClient } from '@/components/client-provider'
 
 export function ReviewsStrip() {
-  const featured = reviews.slice(0, 3)
+  const { client } = useClient()
+  const { reviews } = client
+  const featured = reviews.items.slice(0, 3)
+  const avg = averageRatingFor(reviews.items)
+
+  const description = reviews.sectionDescription
+    .replace('{rating}', String(avg))
+    .replace('{count}', String(reviews.items.length))
+
   return (
     <section className="container mx-auto px-4 py-12 md:py-16">
       <SectionHeading
         eyebrow="Customer Reviews"
-        title="Loved by students and locals in Ife"
-        description={`Rated ${averageRating} out of 5 from ${reviews.length}+ happy customers.`}
+        title={reviews.sectionTitle}
+        description={description}
         action={
           <Button render={<Link href="/reviews">Read all stories</Link>} variant="outline" />
         }

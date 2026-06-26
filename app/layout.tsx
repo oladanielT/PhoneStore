@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "@/components/cart/cart-provider";
+import { ClientProvider } from "@/components/client-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { ThemeProvider } from "@/components/theme-provider";
 
@@ -18,16 +19,16 @@ const displayFont = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Dell Survive Phones Store Ife | Phones, Gadgets & Repairs in Ile-Ife",
+  title: "God's best tech Phones Store Ife | Phones, Gadgets & Repairs in Ile-Ife",
   description:
-    "Dell Survive Phones Store Ife — buy iPhones, Samsung, Tecno, Infinix, Redmi, laptops, smartwatches and accessories in Ile-Ife. Student deals near OAU, phone repairs, warranty, fast delivery, and WhatsApp ordering.",
+    "God's best tech Phones Store Ife — buy iPhones, Samsung, Tecno, Infinix, Redmi, laptops, smartwatches and accessories in Ile-Ife. Student deals near OAU, phone repairs, warranty, fast delivery, and WhatsApp ordering.",
   keywords: [
     "phone store in Ile-Ife",
     "iPhone store Ile-Ife",
     "phone accessories OAU",
     "gadget shop near OAU",
     "phone repair Ile-Ife",
-    "Dell Survive Phones",
+    "God's best tech Phones",
   ],
   icons: {
     icon: "/placeholder-logo.svg",
@@ -60,7 +61,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <CartProvider>{children}</CartProvider>
+          <ClientProvider>
+            <CartProvider>{children}</CartProvider>
+          </ClientProvider>
           <Toaster richColors position="top-center" />
           {process.env.NODE_ENV === "production" && <Analytics />}
         </ThemeProvider>

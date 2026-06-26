@@ -11,6 +11,7 @@ import {
   ChevronLeft,
 } from 'lucide-react'
 import { ModeToggle } from '@/components/mode-toggle'
+import { AdminActiveClientBadge } from '@/components/admin/admin-active-client-badge'
 import { Button } from '@/components/ui/button'
 
 const sidebarItems = [
@@ -36,7 +37,7 @@ export default function AdminLayout({
             <div className="relative size-8 overflow-hidden rounded bg-white">
               <Image
                 src="/placeholder-logo.svg"
-                alt="Dell Survive Logo"
+                alt="God's best tech Logo"
                 fill
                 className="object-contain p-0.5"
               />
@@ -76,6 +77,7 @@ export default function AdminLayout({
             Welcome back, Admin
           </h2>
           <div className="flex items-center gap-4">
+            <AdminActiveClientBadge />
             <ModeToggle />
             <div className="size-8 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary text-xs">
               AD

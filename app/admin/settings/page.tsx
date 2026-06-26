@@ -11,6 +11,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Separator } from '@/components/ui/separator'
 import { Switch } from '@/components/ui/switch'
+import { DemoClientSelector } from '@/components/admin/demo-client-selector'
 
 export default function SettingsPage() {
   return (
@@ -25,6 +26,8 @@ export default function SettingsPage() {
       <Separator />
 
       <div className="grid gap-6">
+        <DemoClientSelector />
+
         <Card>
           <CardHeader>
             <CardTitle>Store Information</CardTitle>
@@ -35,11 +38,11 @@ export default function SettingsPage() {
           <CardContent className="space-y-4">
             <div className="grid gap-2">
               <Label htmlFor="store-name">Store Name</Label>
-              <Input id="store-name" defaultValue="Dell Survive Store Ife" />
+              <Input id="store-name" defaultValue="God's best tech Store Ife" />
             </div>
             <div className="grid gap-2">
               <Label htmlFor="store-email">Support Email</Label>
-              <Input id="store-email" defaultValue="support@dellsurvive.ng" />
+              <Input id="store-email" defaultValue="support@godsbesttech.ng" />
             </div>
             <div className="grid gap-2">
               <Label htmlFor="store-phone">WhatsApp Number</Label>

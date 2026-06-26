@@ -1,4 +1,7 @@
+'use client'
+
 import { MessageCircle } from 'lucide-react'
+import { useStore } from '@/components/client-provider'
 import { whatsappLink } from '@/lib/store'
 import { cn } from '@/lib/utils'
 
@@ -11,9 +14,11 @@ export function WhatsAppButton({
   children?: React.ReactNode
   className?: string
 }) {
+  const store = useStore()
+
   return (
     <a
-      href={whatsappLink(message)}
+      href={whatsappLink(message, store.whatsappNumber)}
       target="_blank"
       rel="noopener noreferrer"
       className={cn(

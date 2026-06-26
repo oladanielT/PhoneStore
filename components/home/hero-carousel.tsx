@@ -21,7 +21,7 @@ const slides = [
       <>
         Upgrade Your Tech with{" "}
         <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-          Dell Survive
+          God's best tech
         </span>
       </>
     ),
@@ -137,7 +137,7 @@ export function HeroCarousel() {
                     {slide.cta} <ArrowRight className="ml-2 size-5" />
                   </Link>
                   <WhatsAppButton
-                    message={`Hello Dell Survive, I'd like to ask about ${slide.cta === "Book a Repair" ? "a repair" : "phones"}.`}
+                    message={`Hello God's best tech, I'd like to ask about ${slide.cta === "Book a Repair" ? "a repair" : "phones"}.`}
                     className="h-14 px-8 text-base font-bold transition-all hover:scale-105 active:scale-95"
                   >
                     Chat to Buy

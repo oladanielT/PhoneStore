@@ -1,8 +1,11 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
 import { AddToCartButton } from '@/components/cart/add-to-cart-button'
 import { WhatsAppButton } from '@/components/whatsapp-button'
+import { useStore } from '@/components/client-provider'
 import { categoryName, type Product } from '@/lib/products'
 import { formatNaira } from '@/lib/store'
 
@@ -12,6 +15,7 @@ function discountPercent(product: Product) {
 }
 
 export function ProductCard({ product }: { product: Product }) {
+  const store = useStore()
   const off = discountPercent(product)
 
   return (
@@ -79,7 +83,7 @@ export function ProductCard({ product }: { product: Product }) {
             openCart
           />
           <WhatsAppButton
-            message={`Hello Dell Survive, I am interested in the ${product.name} (${formatNaira(product.price)}). Is it available?`}
+            message={`Hello ${store.shortName}, I am interested in the ${product.name} (${formatNaira(product.price)}). Is it available?`}
             className="h-10 w-full rounded-xl text-[10px] font-bold uppercase tracking-wider bg-secondary text-secondary-foreground hover:bg-secondary/80"
           >
             Inquire on WhatsApp

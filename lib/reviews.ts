@@ -53,7 +53,7 @@ export const reviews: Review[] = [
     name: 'Funke D.',
     role: 'Small Business Owner',
     rating: 5,
-    text: 'I order accessories for resale from Dell Survive. Always original, always available. Reliable plug in Ife.',
+    text: "I order accessories for resale from God's best tech. Always original, always available. Reliable plug in Ife.",
     date: 'May 2025',
   },
 ]

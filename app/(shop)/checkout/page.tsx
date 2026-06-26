@@ -4,7 +4,8 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { CheckCircle2, MessageSquare, CreditCard, ArrowRight, ShoppingBag } from 'lucide-react'
 import { useCart } from '@/components/cart/cart-provider'
-import { formatNaira, store, whatsappLink } from '@/lib/store'
+import { useStore } from '@/components/client-provider'
+import { formatNaira, whatsappLink } from '@/lib/store'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -14,6 +15,7 @@ import { toast } from 'sonner'
 
 export default function CheckoutPage() {
   const { lines, subtotal, count, clearCart } = useCart()
+  const store = useStore()
   const [step, setStep] = useState<'details' | 'success'>('details')
   const [loading, setLoading] = useState(false)
   const [formData, setFormData] = useState({
@@ -59,9 +61,9 @@ export default function CheckoutPage() {
     }
 
     const itemsList = lines.map(l => `- ${l.product.name} (x${l.quantity})`).join('\n')
-    const message = `Hello Dell Survive! I'd like to place an order.\n\n*Order Details:*\n${itemsList}\n\n*Total:* ${formatNaira(subtotal)}\n\n*Customer Info:*\nName: ${formData.name}\nPhone: ${formData.phone}\nAddress: ${formData.address}\nEmail: ${formData.email}\n\nThank you!`
+    const message = `Hello ${store.shortName}! I'd like to place an order.\n\n*Order Details:*\n${itemsList}\n\n*Total:* ${formatNaira(subtotal)}\n\n*Customer Info:*\nName: ${formData.name}\nPhone: ${formData.phone}\nAddress: ${formData.address}\nEmail: ${formData.email}\n\nThank you!`
     
-    window.open(whatsappLink(message), '_blank')
+    window.open(whatsappLink(message, store.whatsappNumber), '_blank')
     setStep('success')
     clearCart()
   }
@@ -112,7 +114,7 @@ export default function CheckoutPage() {
         </div>
         <h1 className="text-4xl font-extrabold tracking-tight">Order Received!</h1>
         <p className="text-lg text-muted-foreground">
-          Thank you for choosing Dell Survive. We'll contact you shortly to confirm your delivery.
+          Thank you for choosing {store.shortName}. We&apos;ll contact you shortly to confirm your delivery.
         </p>
         <div className="flex flex-col gap-3 sm:flex-row">
           <Button onClick={() => window.location.href = '/'} variant="outline">Back to Home</Button>

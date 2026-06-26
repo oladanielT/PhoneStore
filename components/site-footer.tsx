@@ -1,11 +1,16 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
-import { Clock, Mail, MapPin, Phone, Smartphone } from 'lucide-react'
+import { Clock, Mail, MapPin, Phone } from 'lucide-react'
 import { WhatsAppButton } from '@/components/whatsapp-button'
-import { store } from '@/lib/store'
+import { useClient } from '@/components/client-provider'
 import { categories } from '@/lib/products'
 
 export function SiteFooter() {
+  const { client } = useClient()
+  const { store, branding } = client
+
   return (
     <footer className="border-t bg-secondary/40">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:grid-cols-2 lg:grid-cols-4">
@@ -13,22 +18,21 @@ export function SiteFooter() {
           <Link href="/" className="flex items-center gap-2">
             <div className="relative size-10 overflow-hidden rounded-lg bg-white">
               <Image
-                src="/placeholder-logo.svg"
-                alt="Dell Survive Logo"
+                src={branding.logo}
+                alt={`${store.shortName} Logo`}
                 fill
                 className="object-contain p-1"
               />
             </div>
             <span className="font-heading text-base font-extrabold">
-              Dell Survive
+              {store.shortName}
             </span>
           </Link>
           <p className="text-sm leading-relaxed text-muted-foreground">
-            Your trusted phone, gadget and repair shop in Ile-Ife. Original
-            products, fair prices and warranty you can rely on.
+            {branding.footerTagline}
           </p>
           <WhatsAppButton
-            message="Hello Dell Survive, I'd like to make an enquiry."
+            message={`Hello ${store.shortName}, I'd like to make an enquiry.`}
             className="mt-1 w-full sm:w-auto"
           >
             Chat on WhatsApp
@@ -106,7 +110,9 @@ export function SiteFooter() {
             </li>
             <li className="flex gap-2">
               <Clock className="mt-0.5 size-4 shrink-0 text-primary" />
-              <span>Mon–Sat: 8:00 AM – 8:00 PM</span>
+              <span>
+                {store.hours[0]?.day}: {store.hours[0]?.time}
+              </span>
             </li>
           </ul>
         </div>
@@ -114,12 +120,9 @@ export function SiteFooter() {
       <div className="border-t">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-4 py-5 text-xs text-muted-foreground sm:flex-row">
           <p>
-            © {new Date().getFullYear()} Dell Survive Store Ife. All rights
-            reserved.
+            © {new Date().getFullYear()} {store.name}. All rights reserved.
           </p>
-          <p>
-            Phone Store in Ile-Ife · Gadget Shop near OAU · Phone Repair Ile-Ife
-          </p>
+          <p>{branding.footerSeoLine}</p>
         </div>
       </div>
     </footer>

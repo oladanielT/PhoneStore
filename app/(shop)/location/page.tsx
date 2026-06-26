@@ -1,16 +1,21 @@
+'use client'
+
 import { LocationSection } from '@/components/location-section'
 import { SectionHeading } from '@/components/section-heading'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { MapPin, Navigation, Map } from 'lucide-react'
-import { store } from '@/lib/store'
+import { useClient } from '@/components/client-provider'
 import { Button } from '@/components/ui/button'
 
 export default function LocationPage() {
+  const { client } = useClient()
+  const { store } = client
+
   return (
     <div className="mx-auto max-w-6xl px-4 py-12">
       <SectionHeading
         title="Find Our Store"
-        subtitle="We're conveniently located in the heart of Ile-Ife, just minutes from the OAU campus."
+        subtitle={client.branding.locationDescription}
       />
 
       <div className="mt-12">
@@ -27,10 +32,12 @@ export default function LocationPage() {
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">
-              From OAU Gate, take a bike or taxi heading towards Mayfair/Itasin. We're on the main road at Itasin, easy to spot with our Dell Survive signage.
+              Use Google Maps for turn-by-turn directions to {store.shortName} at {store.address}.
             </p>
             <Button asChild className="mt-6 w-full font-bold">
-              <a href={store.mapDirectionsUrl} target="_blank">Open in Google Maps</a>
+              <a href={store.mapDirectionsUrl} target="_blank" rel="noopener noreferrer">
+                Open in Google Maps
+              </a>
             </Button>
           </CardContent>
         </Card>
@@ -44,7 +51,7 @@ export default function LocationPage() {
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">
-              You can order online and select "Store Pickup" at checkout. Your items will be ready for collection in as little as 30 minutes.
+              Order online and select &ldquo;Store Pickup&rdquo; at checkout. Your items will be ready for collection in as little as 30 minutes.
             </p>
           </CardContent>
         </Card>
@@ -58,7 +65,7 @@ export default function LocationPage() {
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">
-              Ample street parking is available directly in front of the store for quick visits and drop-offs.
+              Street parking is available near the store for quick visits and drop-offs.
             </p>
           </CardContent>
         </Card>

@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="360" height="96" viewBox="0 0 360 96" role="img" aria-labelledby="title desc">
-  <title id="title">Dell Survive logo</title>
-  <desc id="desc">Dell Survive wordmark with a DS monogram</desc>
+  <title id="title">God's best tech logo</title>
+  <desc id="desc">God's best tech wordmark with a GBT monogram</desc>
   <rect width="360" height="96" rx="20" fill="#ffffff"/>
   <rect x="10" y="10" width="76" height="76" rx="18" fill="#1f5fe0"/>
-  <path d="M31 28h15c13 0 22 8 22 20s-9 20-22 20H31V28Zm15 30c7 0 12-4 12-10s-5-10-12-10h-5v20h5Z" fill="#ffffff"/>
-  <path d="M67 30c-6-5-17-5-23 0-5 4-5 11 1 15 3 2 7 3 11 4 5 1 7 2 7 5 0 3-3 5-8 5-5 0-10-2-14-6l-6 8c5 5 12 8 20 8 11 0 19-6 19-15 0-8-5-12-16-15-6-1-8-2-8-5s3-4 7-4 8 1 12 4l-2-4Z" fill="#dbeafe"/>
-  <text x="102" y="44" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="800">Dell Survive</text>
-  <text x="104" y="66" fill="#4b5563" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="1.8">PHONES - GADGETS - REPAIRS</text>
+  <path d="M49 27c-13 0-23 9-23 21s10 21 24 21c8 0 15-3 20-8V46H49v9h10v2c-2 1-5 2-9 2-8 0-13-5-13-11s5-11 13-11c5 0 9 2 12 5l7-7c-5-5-11-8-20-8Z" fill="#ffffff"/>
+  <path d="M31 27h12v42H31V27Zm32 18h12v24H63V45Z" fill="#dbeafe" opacity=".95"/>
+  <text x="102" y="44" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="800">God's best tech</text>
+  <text x="104" y="67" fill="#4b5563" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="1.8">PHONES - GADGETS - REPAIRS</text>
 </svg>

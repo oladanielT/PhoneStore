@@ -1,7 +1,10 @@
+'use client'
+
 import { SectionHeading } from '@/components/section-heading'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Smartphone, Monitor, Battery, Zap, Clock, ShieldCheck, MapPin } from 'lucide-react'
 import { WhatsAppButton } from '@/components/whatsapp-button'
+import { useClient } from '@/components/client-provider'
 
 const services = [
   {
@@ -27,11 +30,14 @@ const services = [
 ]
 
 export default function RepairsPage() {
+  const { client } = useClient()
+  const { store } = client
+
   return (
     <div className="mx-auto max-w-6xl px-4 py-12">
       <SectionHeading
         title="Professional Repairs"
-        subtitle="Fast, reliable, and affordable tech repair services in Ile-Ife."
+        subtitle={`Fast, reliable, and affordable tech repair services at ${store.shortName}.`}
       />
 
       <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -54,13 +60,15 @@ export default function RepairsPage() {
 
       <div className="mt-20 grid gap-12 lg:grid-cols-2 lg:items-center">
         <div className="space-y-6">
-          <h2 className="font-heading text-3xl font-extrabold lg:text-4xl">Why repair with <span className="text-primary">Dell Survive</span>?</h2>
-          
+          <h2 className="font-heading text-3xl font-extrabold lg:text-4xl">
+            Why repair with <span className="text-primary">{store.shortName}</span>?
+          </h2>
+
           <div className="space-y-4">
             {[
               { icon: Clock, title: 'Swift Turnaround', text: 'Most phone repairs are completed while you wait or within 24 hours.' },
               { icon: ShieldCheck, title: 'Service Warranty', text: 'All our repairs come with a standard warranty for your peace of mind.' },
-              { icon: MapPin, title: 'In-Store Expertise', text: 'Visit our shop at Itasin Road for professional service by expert technicians.' },
+              { icon: MapPin, title: 'In-Store Expertise', text: `Visit our shop for professional service by expert technicians.` },
             ].map((item, i) => (
               <div key={i} className="flex gap-4">
                 <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
@@ -75,8 +83,8 @@ export default function RepairsPage() {
           </div>
 
           <div className="pt-4">
-            <WhatsAppButton 
-              message="Hello Dell Survive, I'd like to ask about a repair for my device."
+            <WhatsAppButton
+              message={`Hello ${store.shortName}, I'd like to ask about a repair for my device.`}
               className="h-14 px-10 text-lg font-bold"
             >
               Get a Repair Quote
@@ -85,15 +93,15 @@ export default function RepairsPage() {
         </div>
 
         <div className="relative aspect-video overflow-hidden rounded-3xl bg-muted shadow-2xl">
-          <img 
-            src="/repair-bench.png" 
-            alt="Expert repair service at Dell Survive" 
+          <img
+            src="/repair-bench.png"
+            alt={`Expert repair service at ${store.shortName}`}
             className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
           <div className="absolute bottom-6 left-6 text-white">
-            <p className="font-heading text-xl font-bold">Trusted by 1000+ Students</p>
-            <p className="text-sm opacity-80">Serving OAU & Ife community since 2018</p>
+            <p className="font-heading text-xl font-bold">Trusted by 1000+ Customers</p>
+            <p className="text-sm opacity-80">Serving the community since 2018</p>
           </div>
         </div>
       </div>

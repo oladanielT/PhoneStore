@@ -1,7 +1,12 @@
-import { MapPin, Clock, Phone } from "lucide-react";
-import { store } from "@/lib/store";
+'use client'
+
+import { MapPin, Clock, Phone } from 'lucide-react'
+import { useClient } from '@/components/client-provider'
 
 export function LocationSection() {
+  const { client } = useClient()
+  const { store, branding } = client
+
   return (
     <section className="border-t bg-secondary/50">
       <div className="container mx-auto px-4 py-12 md:py-16">
@@ -11,11 +16,10 @@ export function LocationSection() {
               Visit Us
             </span>
             <h2 className="mt-2 font-heading text-3xl font-bold leading-tight text-balance md:text-4xl">
-              Find Dell Survive Phones in Ile-Ife
+              {branding.locationHeading}
             </h2>
             <p className="mt-3 leading-relaxed text-muted-foreground">
-              Come see the gadgets in person, get expert advice and same-day
-              repairs. We&apos;re close to OAU campus and easy to reach.
+              {branding.locationDescription}
             </p>
             <ul className="mt-6 space-y-4">
               <li className="flex gap-3">
@@ -29,7 +33,7 @@ export function LocationSection() {
                     <span key={h.day} className="block">
                       <span className="font-medium text-foreground">
                         {h.day}:
-                      </span>{" "}
+                      </span>{' '}
                       {h.time}
                     </span>
                   ))}
@@ -38,7 +42,7 @@ export function LocationSection() {
               <li className="flex gap-3">
                 <Phone className="size-5 shrink-0 text-primary" />
                 <a
-                  href={`tel:${store.phoneDisplay.replace(/\s/g, "")}`}
+                  href={`tel:${store.phoneDisplay.replace(/\s/g, '')}`}
                   className="text-sm leading-relaxed hover:text-primary"
                 >
                   {store.phoneDisplay}
@@ -58,5 +62,5 @@ export function LocationSection() {
         </div>
       </div>
     </section>
-  );
+  )
 }
