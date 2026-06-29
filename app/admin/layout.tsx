@@ -37,7 +37,7 @@ export default function AdminLayout({
             <div className="relative size-8 overflow-hidden rounded bg-white">
               <Image
                 src="/placeholder-logo.svg"
-                alt="God's best tech Logo"
+                alt="Emeritus Gadget Logo"
                 fill
                 className="object-contain p-0.5"
               />

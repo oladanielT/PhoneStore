@@ -102,6 +102,66 @@ function makeReviews(storeName: string, city: string): Review[] {
 
 export const clients: ClientPreset[] = [
   {
+    id: 'emeritus-gadget',
+    label: 'Emeritus Gadget (default)',
+    store: {
+      name: 'Emeritus Gadget Store',
+      shortName: 'Emeritus Gadget',
+      tagline: 'Phones, Gadgets & Repairs in Ile-Ife',
+      address: 'Shop 5, Itasin Road, 220101, Ife, Osun State',
+      phoneDisplay: '+234 806 807 7660',
+      whatsappNumber: '2348068077660',
+      email: 'hello@emeritusgadget.ng',
+      hours: [
+        { day: 'Monday – Friday', time: '8:00 AM – 7:30 PM' },
+        { day: 'Saturday', time: '9:00 AM – 8:00 PM' },
+        { day: 'Sunday', time: '1:00 PM – 6:00 PM' },
+      ],
+      mapEmbedSrc:
+        'https://www.google.com/maps?q=Ife,+Osun+State,+Nigeria&output=embed',
+      mapDirectionsUrl:
+        'https://www.google.com/maps/dir/?api=1&destination=Itasin+Road+Ife+Osun+State+Nigeria',
+    },
+    branding: {
+      logo: '/placeholder-logo.svg',
+      headerSubtitle: 'Gadgets · Ife',
+      promoBar:
+        'Free screen guard fitting · Student deals near OAU · Fast delivery in Ile-Ife',
+      footerTagline:
+        'Emeritus Gadget — your trusted phone, gadget and repair shop in Ile-Ife. Original products, fair prices and warranty you can rely on.',
+      footerSeoLine:
+        'Emeritus Gadget · Phone Store Ile-Ife · Gadget Shop & Repairs near OAU',
+      locationHeading: 'Find Emeritus Gadget in Ile-Ife',
+      locationDescription:
+        'Come see the gadgets in person, get expert advice and same-day repairs. Easy to find on Itasin Road.',
+    },
+    hero: {
+      badge: 'Trusted Gadget Store in Ile-Ife',
+      titlePrefix: 'Upgrade Your Tech with',
+      titleHighlight: 'Emeritus Gadget',
+      subtitle:
+        'The go-to source for iPhones, Samsung, laptops and accessories near OAU. Authentic warranty and fast delivery.',
+      trustBadges: ['Genuine Warranty', 'Fast Delivery', 'Store Pickup'],
+      carouselImages: [
+        { src: '/hero-phones.png', alt: 'Premium smartphones at Emeritus Gadget' },
+        { src: '/students.png', alt: 'Student tech deals at Emeritus Gadget' },
+        { src: '/repair-bench.png', alt: 'Professional repair services at Emeritus Gadget' },
+      ],
+      whatsappMessage:
+        "Hello Emeritus Gadget, I'd like to make an enquiry about a phone.",
+      specialOffer: 'Up to 15% OFF',
+      hotDealTitle: 'iPhone 16\nPro Max',
+      hotDealSubtitle: 'Limited Stock',
+    },
+    reviews: {
+      sectionTitle: 'Loved by customers near and far',
+      sectionDescription: 'Rated {rating} out of 5 from {count}+ happy customers.',
+      pageSubtitle: 'Real feedback from Emeritus Gadget customers.',
+      items: makeReviews('Emeritus Gadget', 'Ile-Ife'),
+    },
+    colors: { primary: '#1f5fe0', accent: '#f59e0b' },
+  },
+  {
     id: 'femolarh-gadget',
     label: 'Femolarh Gadget',
     store: {
@@ -283,7 +343,7 @@ export const clients: ClientPreset[] = [
   },
   {
     id: 'demo-gadget',
-    label: 'Demo Gadget Store (default)',
+    label: 'Demo Gadget Store',
     store: {
       name: 'Gadget Store',
       shortName: 'Gadget Store',

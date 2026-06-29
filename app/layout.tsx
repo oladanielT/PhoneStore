@@ -19,16 +19,16 @@ const displayFont = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "God's best tech Phones Store Ife | Phones, Gadgets & Repairs in Ile-Ife",
+  title: "Emeritus Gadget | Phones, Gadgets & Repairs in Ile-Ife",
   description:
-    "God's best tech Phones Store Ife — buy iPhones, Samsung, Tecno, Infinix, Redmi, laptops, smartwatches and accessories in Ile-Ife. Student deals near OAU, phone repairs, warranty, fast delivery, and WhatsApp ordering.",
+    "Emeritus Gadget — buy iPhones, Samsung, Tecno, Infinix, Redmi, laptops, smartwatches and accessories in Ile-Ife. Student deals near OAU, phone repairs, warranty, fast delivery, and WhatsApp ordering.",
   keywords: [
     "phone store in Ile-Ife",
     "iPhone store Ile-Ife",
     "phone accessories OAU",
     "gadget shop near OAU",
     "phone repair Ile-Ife",
-    "God's best tech Phones",
+    "Emeritus Gadget",
   ],
   icons: {
     icon: "/placeholder-logo.svg",

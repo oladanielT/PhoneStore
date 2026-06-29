@@ -38,11 +38,11 @@ export default function SettingsPage() {
           <CardContent className="space-y-4">
             <div className="grid gap-2">
               <Label htmlFor="store-name">Store Name</Label>
-              <Input id="store-name" defaultValue="God's best tech Store Ife" />
+              <Input id="store-name" defaultValue="Emeritus Gadget Store" />
             </div>
             <div className="grid gap-2">
               <Label htmlFor="store-email">Support Email</Label>
-              <Input id="store-email" defaultValue="support@godsbesttech.ng" />
+              <Input id="store-email" defaultValue="hello@emeritusgadget.ng" />
             </div>
             <div className="grid gap-2">
               <Label htmlFor="store-phone">WhatsApp Number</Label>
