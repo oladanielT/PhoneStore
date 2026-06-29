@@ -23,7 +23,7 @@ type ClientContextValue = {
 }
 
 const ClientContext = createContext<ClientContextValue | null>(null)
-const STORAGE_KEY = 'phone-store-active-client-v1'
+const STORAGE_KEY = 'phone-store-active-client-v2'
 
 function applyClientColors(client: ClientPreset) {
   if (!client.colors) return

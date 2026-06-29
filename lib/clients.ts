@@ -403,10 +403,14 @@ export const clients: ClientPreset[] = [
   },
 ]
 
-export const DEFAULT_CLIENT_ID = clients[0].id
+export const DEFAULT_CLIENT_ID = 'emeritus-gadget'
 
 export function getClientById(id: string): ClientPreset {
-  return clients.find((c) => c.id === id) ?? clients[0]
+  return (
+    clients.find((c) => c.id === id) ??
+    clients.find((c) => c.id === DEFAULT_CLIENT_ID) ??
+    clients[0]
+  )
 }
 
 export function averageRatingFor(reviews: Review[]) {
