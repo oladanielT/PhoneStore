@@ -32,8 +32,8 @@ export function DemoClientSelector() {
         </div>
         <CardDescription>
           Select which client to preview on the storefront. The entire site —
-          name, location, hero, reviews and colors — updates instantly. Your
-          selection is saved in this browser.
+          name, location, hero, reviews and colors — updates instantly for this
+          browser session. Refreshing the page resets to Emeritus Gadget.
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">

@@ -23,7 +23,11 @@ type ClientContextValue = {
 }
 
 const ClientContext = createContext<ClientContextValue | null>(null)
-const STORAGE_KEY = 'phone-store-active-client-v2'
+
+const LEGACY_STORAGE_KEYS = [
+  'phone-store-active-client-v1',
+  'phone-store-active-client-v2',
+]
 
 function applyClientColors(client: ClientPreset) {
   if (!client.colors) return
@@ -38,28 +42,23 @@ function applyDocumentTitle(client: ClientPreset) {
 
 export function ClientProvider({ children }: { children: React.ReactNode }) {
   const [clientId, setClientIdState] = useState(DEFAULT_CLIENT_ID)
-  const [hydrated, setHydrated] = useState(false)
 
   useEffect(() => {
     try {
-      const saved = localStorage.getItem(STORAGE_KEY)
-      if (saved && clients.some((c) => c.id === saved)) {
-        setClientIdState(saved)
+      for (const key of LEGACY_STORAGE_KEYS) {
+        localStorage.removeItem(key)
       }
     } catch {
       // ignore
     }
-    setHydrated(true)
   }, [])
 
   const client = useMemo(() => getClientById(clientId), [clientId])
 
   useEffect(() => {
-    if (!hydrated) return
-    localStorage.setItem(STORAGE_KEY, clientId)
     applyClientColors(client)
     applyDocumentTitle(client)
-  }, [clientId, client, hydrated])
+  }, [client])
 
   const setClientId = useCallback((id: string) => {
     if (clients.some((c) => c.id === id)) {

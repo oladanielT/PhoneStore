@@ -342,6 +342,66 @@ export const clients: ClientPreset[] = [
     colors: { primary: '#dc2626', accent: '#eab308' },
   },
   {
+    id: 'omo-oba-gadget',
+    label: 'Omo Oba Gadget',
+    store: {
+      name: 'Omo Oba Gadget Store',
+      shortName: 'Omo Oba Gadget',
+      tagline: 'Phones, Gadgets & Repairs in Ile-Ife OAU Campus',
+      address: 'Shop 8, OAU Campus, Ile-Ife, Osun State',
+      phoneDisplay: '+234 806 807 7661',
+      whatsappNumber: '2348068077661',
+      email: 'hello@omoobagadget.ng',
+      hours: [
+        { day: 'Monday – Friday', time: '8:00 AM – 7:00 PM' },
+        { day: 'Saturday', time: '9:00 AM – 6:00 PM' },
+        { day: 'Sunday', time: '12:00 PM – 5:00 PM' },
+      ],
+      mapEmbedSrc:
+        'https://www.google.com/maps?q=OAU+Campus+Ile-Ife&output=embed',
+      mapDirectionsUrl:
+        'https://www.google.com/maps/dir/?api=1&destination=OAU+Campus+Ile-Ife+Osun+State+Nigeria',
+    },
+    branding: {
+      logo: '/placeholder-logo.svg',
+      headerSubtitle: 'Gadgets · OAU Campus',
+      promoBar:
+        'Free screen guard fitting · Student deals on campus · Fast delivery in Ile-Ife',
+      footerTagline:
+        'Omo Oba Gadget — your trusted phone, gadget and repair shop right on OAU Campus. Original products, fair prices and warranty you can rely on.',
+      footerSeoLine:
+        'Omo Oba Gadget · Phone Store OAU Campus · Gadget Shop & Repairs Ile-Ife',
+      locationHeading: 'Find Omo Oba Gadget on OAU Campus',
+      locationDescription:
+        'Conveniently located on OAU Campus for students and staff. Get expert advice and same-day repairs without leaving campus.',
+    },
+    hero: {
+      badge: 'Your Campus Gadget Store',
+      titlePrefix: 'Upgrade Your Tech with',
+      titleHighlight: 'Omo Oba Gadget',
+      subtitle:
+        'The go-to source for iPhones, Samsung, laptops and accessories right on OAU Campus. Authentic warranty and fast delivery.',
+      trustBadges: ['On Campus Location', 'Student Discounts', 'Same-Day Repairs'],
+      carouselImages: [
+        { src: '/hero-phones.png', alt: 'Premium smartphones at Omo Oba Gadget' },
+        { src: '/students.png', alt: 'Student tech deals at Omo Oba Gadget' },
+        { src: '/repair-bench.png', alt: 'Professional repair services at Omo Oba Gadget' },
+      ],
+      whatsappMessage:
+        "Hello Omo Oba Gadget, I'd like to make an enquiry about a phone.",
+      specialOffer: 'Student Special',
+      hotDealTitle: 'iPhone 16\nPro Max',
+      hotDealSubtitle: 'Campus Exclusive',
+    },
+    reviews: {
+      sectionTitle: 'Loved by OAU students and residents',
+      sectionDescription: 'Rated {rating} out of 5 from {count}+ happy customers.',
+      pageSubtitle: 'Real feedback from Omo Oba Gadget customers.',
+      items: makeReviews('Omo Oba Gadget', 'Ile-Ife'),
+    },
+    colors: { primary: '#10b981', accent: '#8b5cf6' },
+  },
+  {
     id: 'demo-gadget',
     label: 'Demo Gadget Store',
     store: {
@@ -402,21 +462,3 @@ export const clients: ClientPreset[] = [
     colors: { primary: '#059669', accent: '#3b82f6' },
   },
 ]
-
-export const DEFAULT_CLIENT_ID = 'emeritus-gadget'
-
-export function getClientById(id: string): ClientPreset {
-  return (
-    clients.find((c) => c.id === id) ??
-    clients.find((c) => c.id === DEFAULT_CLIENT_ID) ??
-    clients[0]
-  )
-}
-
-export function averageRatingFor(reviews: Review[]) {
-  return (
-    Math.round(
-      (reviews.reduce((s, r) => s + r.rating, 0) / reviews.length) * 10,
-    ) / 10
-  )
-}
